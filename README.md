@@ -67,6 +67,7 @@ Make sure deviceQuery runs ok.
 
 
 Goto <https://developer.nvidia.com/rdp/cudnn-download> and download and install.
+
 1. cuDNN v5.1 Runtime Library for Ubuntu14.04 (Deb).
 2. cuDNN v5.1 Developer Library for Ubuntu14.04 (Deb).
 
