@@ -21,6 +21,7 @@ tar xf cmake-3.2.2.tar.gz
 cd cmake-3.2.2
 ./configure
 make
+sudo make install
 ```
 
 ```
@@ -82,5 +83,29 @@ Uncomment the USE_CUDNN := 1 flag in Makefile.config.
 make all
 make test
 make runtest
-make distribute
 ```
+Edit Makefile.config line 64 from
+```
+PYTHON_INCLUDE := /usr/include/python2.7 \
+		/usr/lib/python2.7/dist-packages/numpy/core/include
+```
+to
+```
+PYTHON_INCLUDE := /usr/include/python2.7 \
+		/usr/lib/python2.7/dist-packages/numpy/core/include \
+		/usr/local/lib/python2.7/dist-packages/numpy/core/include    
+```
+then
+```
+make distribute
+make pycaffe
+```
+
+```
+export PYTHONPATH=/your/caffe/path/python${PYTHONPATH:+:${PYTHONPATH}}
+```
+make sure 
+```
+python -c "import caffe"
+```
+runs ok.
