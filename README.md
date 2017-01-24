@@ -102,7 +102,7 @@ make pycaffe
 ```
 
 ```
-export PYTHONPATH=/your/caffe/path/python${PYTHONPATH:+:${PYTHONPATH}}
+export PYTHONPATH=`pwd`/python${PYTHONPATH:+:${PYTHONPATH}}
 ```
 make sure 
 ```
